@@ -1,0 +1,57 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-fraunces: 'Fraunces', Georgia, serif;
+    --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Typography Utility Classes */
+.font-serif {
+  font-family: var(--font-fraunces), serif;
+}
+
+.font-sans {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-jetbrains-mono), monospace;
+}
+
+/* Soft pulse keyframes for live status and glow */
+@keyframes gold-pulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.08);
+  }
+}
+
+.animate-gold-pulse {
+  animation: gold-pulse 2.5s infinite ease-in-out;
+}
+
+/* Scrollbar styling for financial terminal tables */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111714;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #24332B;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3B5346;
+}
