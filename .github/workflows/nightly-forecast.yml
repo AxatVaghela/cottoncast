@@ -1,0 +1,48 @@
+name: Nightly CottonCast Forecast Refresh
+
+on:
+  schedule:
+    # Runs at 02:00 UTC Monday-Friday (after ICE market settlement)
+    - cron: '0 2 * * 1-5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh-forecast:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout monorepo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+
+      - name: Install ML dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install yfinance tensorflow scikit-learn statsmodels pandas numpy
+
+      - name: Run forecast refresh pipeline
+        run: |
+          python ml/train.py
+          # Sync JSON artifacts to api directory for HF space deployment
+          cp ml/artifacts/*.json api/artifacts/
+
+      - name: Commit and push updated artifacts
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action [CottonCast Cron]"
+          git add ml/artifacts/*.json api/artifacts/*.json
+          if git diff --staged --quiet; then
+            echo "No artifact changes detected."
+          else
+            git commit -m "chore(cron): update forecast & indicator artifacts [skip ci]"
+            git push
+          fi
