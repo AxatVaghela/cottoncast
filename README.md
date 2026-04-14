@@ -5,9 +5,13 @@
 [![TensorFlow: 2.18](https://img.shields.io/badge/TensorFlow-2.18-orange.svg)](https://tensorflow.org/)
 [![Next.js: 16 (App Router)](https://img.shields.io/badge/Next.js-16_App_Router-black.svg)](https://nextjs.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.110-009688.svg)](https://fastapi.tiangolo.com/)
-[![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED.svg)](https://www.docker.com/)
+[![Vercel: Live App](https://img.shields.io/badge/Vercel-Live_App-black?logo=vercel)](https://web-tan-three-wi5hmwdog9.vercel.app)
 
 > **Quantitative Commodity Forecasting Platform** for ICE Cotton No. 2 (`CT=F`) Futures. Bridges agricultural commodity econometrics and modern deep sequence learning with Bahdanau attention, zero data leakage, and 100-pass Monte Carlo dropout uncertainty quantification.
+>
+> 🚀 **Live Production Deployment:** [https://web-tan-three-wi5hmwdog9.vercel.app](https://web-tan-three-wi5hmwdog9.vercel.app)  
+> 📈 **Live Analytics Terminal:** [https://web-tan-three-wi5hmwdog9.vercel.app/dashboard](https://web-tan-three-wi5hmwdog9.vercel.app/dashboard)  
+> 🔬 **Methodology & EMH Validation:** [https://web-tan-three-wi5hmwdog9.vercel.app/model](https://web-tan-three-wi5hmwdog9.vercel.app/model)
 
 ---
 
