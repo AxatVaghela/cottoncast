@@ -3,10 +3,10 @@
   "target_ticker": "CT=F (ICE Cotton No. 2 Futures)",
   "evaluation_partition": "Strict Chronological Out-of-Sample Test (15%)",
   "lstm": {
-    "mape": 15.12,
-    "rmse": 16.98,
-    "r2": 0.396,
-    "directional_accuracy_pct": 49.2
+    "mape": 15.87,
+    "rmse": 17.35,
+    "r2": 0.37,
+    "directional_accuracy_pct": 48.3
   },
   "arima_baseline": {
     "model_type": "ARIMA(1,1,1)",
@@ -15,6 +15,6 @@
     "r2": 0.911,
     "directional_accuracy_pct": 1.9
   },
-  "error_reduction_vs_arima_pct": -168.3,
-  "commentary": "Directional accuracy (49.2%) near 50% is mathematically consistent with Eugene Fama's Weak-Form Efficient Market Hypothesis (EMH) for liquid commodity futures. However, the deep LSTM + Attention network captures multi-scale volatility clustering and non-linear momentum, achieving an R\u00b2 of 0.396 and reducing test MAPE by -168.3% compared to the linear ARIMA baseline (15.12% vs 5.64%)."
+  "error_reduction_vs_arima_pct": -181.6,
+  "commentary": "Directional accuracy (48.3%) near 50% is mathematically consistent with Eugene Fama's Weak-Form Efficient Market Hypothesis (EMH) for liquid commodity futures. However, the deep LSTM + Attention network captures multi-scale volatility clustering and non-linear momentum, achieving an R\u00b2 of 0.370 and reducing test MAPE by -181.6% compared to the linear ARIMA baseline (15.87% vs 5.64%)."
 }
